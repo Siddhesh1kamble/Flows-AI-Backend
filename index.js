@@ -3,6 +3,10 @@ const cors = require("cors");
 const dotenv = require("dotenv");
 const { OpenAI } = require("openai");
 
+app.get('/', (req, res) => {
+  res.send('Backend is running');
+});
+
 dotenv.config();
 
 const app = express();

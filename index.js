@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Set up GROQ-compatible OpenAI client
 const openai = new OpenAI({
-  baseURL: "https://api.groq.com/openai/v1", // Important: GROQ's base URL
+  baseURL: "https://api.groq.com/openai/v1", 
   apiKey: process.env.GROQ_API_KEY,
 });
 
@@ -26,7 +26,7 @@ app.post("/api/message", async (req, res) => {
 
   try {
     const response = await openai.chat.completions.create({
-      model: "llama3-70b-8192", // Use a GROQ-supported model
+      model: "llama3-70b-8192", 
       messages: [
         { role: "system", content: "You are a helpful chatbot." },
         { role: "user", content: userMessage }
